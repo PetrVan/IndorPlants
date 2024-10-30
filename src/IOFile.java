@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class IOFile{
-    private String inputFile = Settings.INPUTFILE;
-    private String outputFile = Settings.OUTPUTFILE;
+
+    private String file = Settings.FILE;
     private String delimiter = Settings.DELIMITER;
     private Plants plants;
 
@@ -21,7 +21,7 @@ public class IOFile{
     }
 
     public void loadFile() throws PlantException{
-        try(Scanner scanner = new Scanner(new BufferedReader(new FileReader(inputFile)))) {
+        try(Scanner scanner = new Scanner(new BufferedReader(new FileReader(file)))) {
             while (scanner.hasNextLine()) {
                 int numberLine = 0;
                 String line = scanner.nextLine();
@@ -29,7 +29,7 @@ public class IOFile{
                 plants.addPlant(parse(line, numberLine, delimiter));
             }
         }catch(FileNotFoundException e) {
-            throw new PlantException( "File: " + inputFile + " not found!\n" + e.getLocalizedMessage());
+            throw new PlantException( "File: " + file + " not found!\n" + e.getLocalizedMessage());
         }
     }
 
@@ -53,7 +53,7 @@ public class IOFile{
     }
 
     public void safeFile(List<Plant> plants) throws PlantException{
-        try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFile)))) {
+        try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
             for (Plant plant : plants) {
                 writer.println(plant.getName() + delimiter +
                         plant.getName() + delimiter +
@@ -62,7 +62,7 @@ public class IOFile{
                         plant.getPlanted());
             }
         }catch (IOException e){
-            throw new PlantException("File: " + outputFile + " not found.\n" + e.getLocalizedMessage());
+            throw new PlantException("File: " + file + " not found.\n" + e.getLocalizedMessage());
         }
     }
 }
