@@ -6,6 +6,12 @@ public class Main {
     public static void main(String[] args) {
         try {
             Plants plants = new Plants();
+
+            plants.addList(plants.loadFile());
+
+
+
+
             Plant gerbera = new Plant("Gerbera", 5);
             plants.add(gerbera);
             System.out.println(gerbera.getWateringInfo());
@@ -19,11 +25,8 @@ public class Main {
             plants.add(tulipan);
             System.out.println(tulipan.getWateringInfo());
 
-            IOFile file = new IOFile();
-            file.loadFile();
-            file.getPlants().getCollection().forEach(System.out::println);
-            file.safeFile(plants.getList());
 
+            plants.safeFile(plants.getList());
         }
         catch (PlantException e){
             System.err.println(e.getMessage());
