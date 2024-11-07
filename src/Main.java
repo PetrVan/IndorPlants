@@ -20,6 +20,7 @@ public class Main {
             System.out.println(tulipan2.getWateringInfo());
             plants.addPlant(tulipan);
             System.out.println(tulipan.getWateringInfo());
+            plants.sort();
 
 
             plants.safeFile(plants.getList());

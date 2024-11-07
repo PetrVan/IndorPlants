@@ -12,7 +12,7 @@ public class Plant implements Comparable<Plant> {
     private LocalDate planted;
     private LocalDate frequency;
 
-    public Plant(String name, String notes,int frequencyOfWatering, LocalDate watering, LocalDate planted ) throws PlantException{
+    public Plant(String name, String notes, int frequencyOfWatering, LocalDate watering, LocalDate planted ) throws PlantException{
         this.name = name;
         this.notes = notes;
         this.frequencyOfWatering = frequencyOfWatering;

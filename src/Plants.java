@@ -89,7 +89,7 @@ public class Plants{
         try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
             for (Plant plant : plants) {
                 writer.println(plant.getName() + delimiter +
-                        plant.getName() + delimiter +
+                        plant.getNotes() + delimiter +
                         plant.getFrequencyOfWatering() + delimiter +
                         plant.getWatering() + delimiter +
                         plant.getPlanted());
