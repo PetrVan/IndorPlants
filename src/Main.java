@@ -3,7 +3,7 @@ public class Main {
         try {
             Plants plants = new Plants();
 
-            plants.addList(plants.loadFile());
+            plants.loadFile();
 
 
 

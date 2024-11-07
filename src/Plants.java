@@ -72,7 +72,7 @@ public class Plants{
         }
     }
 
-    public List<Plant> loadFile() throws PlantException{
+    public void loadFile() throws PlantException{
         try(Scanner scanner = new Scanner(new BufferedReader(new FileReader(file)))) {
             while (scanner.hasNextLine()) {
                 int numberLine = 0;
@@ -83,7 +83,6 @@ public class Plants{
         }catch(FileNotFoundException e) {
             throw new PlantException( "File: " + file + " not found!\n" + e.getLocalizedMessage());
         }
-        return new ArrayList<>(plants);
     }
 
     public void safeFile(List<Plant> plants) throws PlantException{
