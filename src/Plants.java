@@ -10,7 +10,7 @@ public class Plants{
     private  List<Plant> plants = new ArrayList<>();
 
 
-    public void add(Plant plant) {
+    public void addPlant(Plant plant) {
         plants.add(plant);
     }
 
@@ -18,21 +18,8 @@ public class Plants{
         return new ArrayList<>(plants);
     }
 
-    public Collection<Plant> getCollection(){
-        return plants;
-    }
-
-
     public Plant getPlantByIndex(int index){
         return plants.get(index);
-    }
-
-    public void addPlant(Plant plant){
-        plants.add(plant);
-    }
-
-    public List<Plant> getPlantList(){
-        return new ArrayList<>();
     }
 
     public void addList(List<Plant> plants){
